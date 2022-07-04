@@ -4,8 +4,8 @@ title: "[BUG] <title>"
 labels: [Bug]
 body:
 - type: checkboxes
+  id: overview
   attributes:
-    id: overview
     label: "概要"
     description: Please search to see if an issue already exists for the bug you encountered.
     options:
@@ -24,8 +24,8 @@ body:
   validations:
     required: false
 - type: textarea
+  id: behavior
   attributes:
-    id: behavior
     label: "期待する動作(完了条件)"
     description: |
       examples:
