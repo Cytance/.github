@@ -1,0 +1,29 @@
+name: "\U0001F31F 機能(追加|変更)テンプレート"
+description: <(追加|変更)の提案>
+labels: ["👩🏻‍💼 起票"]
+
+body:
+- type: textarea
+  attributes:
+    label: 概要
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: 目的
+  validations:
+    required: false
+
+- type: textarea
+  attributes:
+    label: 説明
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: 備考
+    render: markdown
+  validations:
+    required: false
