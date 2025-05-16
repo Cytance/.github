@@ -21,7 +21,9 @@ RUN apt update && apt install -y build-essential git libedit-dev zlib1g-dev libf
 USER linuxbrew
 RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
-RUN brew install asdf
+RUN brew install asdf && brew cleanup
+RUN echo 'export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"' >> ~/.bash_profile
+
 
 USER root
 CMD /bin/bash
