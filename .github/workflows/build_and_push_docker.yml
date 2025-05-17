@@ -22,6 +22,7 @@ jobs:
         id: set-output
         run: |
           CHANGED_DIRS=$(git log -m -1 --name-only --pretty="" | grep '^docker/' | cut -d'/' -f2 | sort -u | jq -R -s -c 'split("\n")[:-1]')
+          echo "${CHANGED_DIRS}"
           echo "changed_dirs=${CHANGED_DIRS}" >> $GITHUB_OUTPUT
 
   build-and-push:
