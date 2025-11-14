@@ -7,9 +7,7 @@ RUN useradd -m -s /bin/bash linuxbrew
 RUN echo 'linuxbrew ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
 RUN echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
 
-RUN apt update && apt install -y build-essential git  curl ca-certificates libedit-dev libssl-dev zlib1g-dev\
-    libbz2-dev libreadline-dev libsqlite3-dev curl libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev\
-    libffi-dev liblzma-dev --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt update && apt install -y build-essential git curl ca-certificates --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 USER linuxbrew
 ARG HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
