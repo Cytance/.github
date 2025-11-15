@@ -31,5 +31,7 @@ RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && echo "eval \"\$($(
 RUN echo 'export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"' >> ~/.bashrc
 RUN echo 'export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"' >> ~/.bash_profile
 RUN brew install asdf && brew cleanup
+RUN echo "Homebrew version:" && brew --version
+RUN echo "asdf version:" && asdf version
 
 CMD /bin/bash
