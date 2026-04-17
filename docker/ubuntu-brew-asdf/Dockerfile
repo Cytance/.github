@@ -1,4 +1,4 @@
-FROM --platform=linux/x86_64 ubuntu:latest
+FROM --platform=$BUILDPLATFORM ubuntu:latest
 
 ENV NONINTERACTIVE=1
 ENV HOMEBREW_NO_AUTO_UPDATE=1

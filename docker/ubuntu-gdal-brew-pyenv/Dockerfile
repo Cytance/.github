@@ -1,4 +1,4 @@
-FROM --platform=linux/x86_64 ghcr.io/osgeo/gdal:ubuntu-small-latest
+FROM --platform=$BUILDPLATFORM ghcr.io/osgeo/gdal:ubuntu-small-latest
 
 ENV NONINTERACTIVE=1
 ENV HOMEBREW_NO_AUTO_UPDATE=1
